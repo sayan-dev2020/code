@@ -1,0 +1,39 @@
+<script>
+var sum = 0;
+var table = document.getElementById("res");
+var ths = table.getElementsByTagName('th');
+var tds = table.getElementsByClassName('country-0');
+for(var i=0;i<tds.length;i++){
+	sum += isNaN(tds[i].innerText) ? 0 : parseInt(tds[i].innerText);
+}
+
+var row = table.insertRow(table.rows.length);
+var cell = row.insertCell(0);
+cell.setAttribute('colspan', ths.length);
+
+var totalBalance  = document.createTextNode('Total Balance ' + sum);
+cell.appendChild(totalBalance);
+</script>
+
+<table id="res">
+<thead>
+  <th>Country</th>
+  <th>city</th>
+  <th>state</th>
+</thead>
+<tr>
+  <td class="countable-0">5</td>
+  <td class="countable-1">12</td>
+  <td class="countable-2">12</td>
+</tr>
+<tr>
+  <td class="countable-0">8</td>
+  <td class="countable-1">12</td>
+  <td class="countable-2">15</td>
+</tr>
+<tr>
+  <td class="countable-0">9</td>
+  <td class="countable-1">14</td>
+  <td class="countable-2">18</td>
+</tr>
+</table>
